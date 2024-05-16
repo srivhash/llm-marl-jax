@@ -107,7 +107,7 @@ class WandbLogger(base.Logger):
       self._run = wandb.init(
           project=project,
           dir=di,
-          entity=entity,
+          # entity=entity,
           name=name,
           group=group,
           config=config,
