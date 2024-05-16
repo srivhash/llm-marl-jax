@@ -44,8 +44,9 @@ class MAActor(core.Actor):
       for _ in range(self.n_agents):
         states.append(initial_state_fn(next(rng_sequence)))
       return states
-
-    self._initial_states = ma_utils.merge_data(initialize_states(self._rng))
+    
+    state_merge = initialize_states(self._rng)
+    self._initial_states = ma_utils.merge_data(state_merge)
 
   def select_action(self, observations: types.Observations) -> types.Actions:
     if self._states is None:
@@ -56,6 +57,7 @@ class MAActor(core.Actor):
                                             self._states)
 
     actions = jax.random.categorical(next(self._rng), logits)
+    # actions = jnp.array([5,1])
 
     self._prev_logits = logits
     self._prev_states = self._states

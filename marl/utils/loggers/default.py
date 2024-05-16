@@ -89,7 +89,7 @@ class WandbLogger(base.Logger):
       *,
       project: Optional[str] = None,
       entity: Optional[str] = None,
-      dir: Optional[str] = None,  # pylint: disable=redefined-builtin
+      di: Optional[str] = None,  # pylint: disable=redefined-builtin
       name: Optional[str] = None,
       group: Optional[str] = None,
       config: Optional[Any] = None,
@@ -103,9 +103,10 @@ class WandbLogger(base.Logger):
     self._iter = 0
     self._steps_key = steps_key
     if wandb.run is None:
+      print(project,entity,di)
       self._run = wandb.init(
           project=project,
-          dir=dir,
+          dir=di,
           entity=entity,
           name=name,
           group=group,

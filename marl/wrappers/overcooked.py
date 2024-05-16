@@ -58,7 +58,7 @@ class OverCooked(dm_env.Environment):
 
   def _get_observation(self) -> list[types.NestedArray]:
     # observation = self.env.lossless_state_encoding_mdp(self.env.state)
-    observation = self.env.featurize_state_mdp(self.env.state)
+    observation= self.env.featurize_state_mdp(self.env.state)
     return [{"agent_obs": obs} for obs in observation]
 
   def reset(self) -> dm_env.TimeStep:

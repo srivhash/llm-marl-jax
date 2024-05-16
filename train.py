@@ -63,8 +63,8 @@ flags.DEFINE_integer("num_steps", 200_000_000, "Number of env steps to run.")
 flags.DEFINE_string("exp_log_dir", "./results/",
                     "Directory to store experiment logs in.")
 flags.DEFINE_bool("use_tb", True, "Flag to enable tensorboard logging.")
-flags.DEFINE_bool("use_wandb", False, "Flag to enable wandb.ai logging.")
-flags.DEFINE_string("wandb_entity", "", "Entity name for wandb account.")
+flags.DEFINE_bool("use_wandb", True, "Flag to enable wandb.ai logging.")
+flags.DEFINE_string("wandb_entity", "rohan-victorious108", "Entity name for wandb account.")
 flags.DEFINE_string("wandb_project", "marl-jax",
                     "Project name for wandb logging.")
 flags.DEFINE_string("wandb_tags", "", "Comma separated list of tags for wandb.")
